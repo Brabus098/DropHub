@@ -1,6 +1,6 @@
 import UIKit
 
-class FullImageController: UIViewController {
+class FullImageController: UIViewController, FullImageControllerProtocol {
     
     private let scrollView = UIScrollView()
     private let contentImageView = UIImageView()
@@ -26,7 +26,6 @@ class FullImageController: UIViewController {
         // 2. Настройка ImageView
         contentImageView.contentMode = .scaleAspectFit
         contentImageView.clipsToBounds = true
-        
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentImageView)
@@ -54,23 +53,12 @@ class FullImageController: UIViewController {
             contentImageView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
         ])
     }
-    
+}
+
+extension FullImageController {
     func setImage(_ image: UIImage) {
         contentImageView.image = image
-               view.layoutIfNeeded()
-
-//        // Рассчитываем размер для contentSize
-//        let imageSize = image.size
-//        let viewSize = view.bounds.size
-//        let widthRatio = viewSize.width / imageSize.width
-//        let heightRatio = viewSize.height / imageSize.height
-//        let minRatio = min(widthRatio, heightRatio)
-//        
-//        // Устанавливаем contentSize
-//        scrollView.contentSize = CGSize(
-//            width: imageSize.width * minRatio,
-//            height: imageSize.height * minRatio
-//        )
+        view.layoutIfNeeded()
     }
 }
 
