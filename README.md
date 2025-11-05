@@ -1,4 +1,4 @@
-# DropHub CS:GO Case Simulator - Симулятор открытия кейсов
+# DropHub - Симулятор открытия кейсов
 
 ![Swift](https://img.shields.io/badge/Swift-5.9-FA7343?logo=swift)
 ![iOS](https://img.shields.io/badge/iOS-15.0+-lightgrey?logo=apple)
