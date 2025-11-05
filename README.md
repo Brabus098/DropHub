@@ -8,7 +8,7 @@
 **CS:GO Case Simulator** - интерактивное iOS-приложение для виртуального открытия кейсов CS:GO с гарантированным выпадением подарков. Создано для surprise-поздравлений друзей с элементами геймификации.
 
 <p align="center">
-  <img src="https://github.com/Brabus098/DropHub/raw/main/MainScreen.png" width="200" alt="Открытие кейса">
+  <img src="https://github.com/Brabus098/DropHub/raw/main/MainScreen.png](https://github.com/Brabus098/DropHub/blob/master/MainScreen.png" width="200" alt="Открытие кейса">
   
 </p>
 
