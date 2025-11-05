@@ -1,4 +1,4 @@
-# CS:GO Case Simulator - Симулятор открытия кейсов
+# DropHub CS:GO Case Simulator - Симулятор открытия кейсов
 
 ![Swift](https://img.shields.io/badge/Swift-5.9-FA7343?logo=swift)
 ![iOS](https://img.shields.io/badge/iOS-15.0+-lightgrey?logo=apple)
@@ -8,7 +8,7 @@
 **CS:GO Case Simulator** - интерактивное iOS-приложение для виртуального открытия кейсов CS:GO с гарантированным выпадением подарков. Создано для surprise-поздравлений друзей с элементами геймификации.
 
 <p align="center">
-  <img src="https://github.com/Brabus098/Trains/blob/main/MainScreen.png?raw=true" width="200" alt="Открытие кейса">
+  <img src="https://github.com/Brabus098/DropHub/main/MainScreen.png?raw=true" width="200" alt="Открытие кейса">
   <img src="https://github.com/Brabus098/Trains/blob/main/Screenshots/inventory.png?raw=true" width="200" alt="Инвентарь">
   <img src="https://github.com/Brabus098/Trains/blob/main/Screenshots/skin-detail.png?raw=true" width="200" alt="Детали скина">
   <img src="https://github.com/Brabus098/Trains/blob/main/Screenshots/congratulations.png?raw=true" width="200" alt="Поздравления">
