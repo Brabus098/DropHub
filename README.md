@@ -9,8 +9,10 @@
 
 <p align="center">
 <img src="https://github.com/Brabus098/DropHub/raw/master/MainScreen.png" width="200" alt="Открытие кейса">
-<img src="https://github.com/Brabus098/DropHub/raw/master/DescriptionScreen.png" width="200" alt="Карточка инвентаря">
 <img src="https://github.com/Brabus098/DropHub/raw/master/drop.png" width="200" alt="Выпадение кейса">  
+<img src="https://github.com/Brabus098/DropHub/raw/master/DescriptionScreen.png" width="200" alt="Карточка инвентаря">
+<img src="https://github.com/Brabus098/DropHub/raw/master/FullScreen.png" width="200" alt="Осмотр дропа увеличенный">
+
 
 
 </p>
