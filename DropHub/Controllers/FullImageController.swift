@@ -1,29 +1,25 @@
 import UIKit
 
-class FullImageController: UIViewController, FullImageControllerProtocol {
+final class FullImageController: UIViewController, FullImageControllerProtocol {
     
     private let scrollView = UIScrollView()
     private let contentImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        setupViews()
         setupConstraints()
     }
     
-    private func setupView() {
+    private func setupViews() {
         view.backgroundColor = .specialBack
         
-        // 1. Настройка ScrollView
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator = true
-        scrollView.alwaysBounceVertical = false
-        scrollView.alwaysBounceHorizontal = true
+        scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
-        scrollView.minimumZoomScale = 0.2
-        scrollView.maximumZoomScale = 6.0
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 3
         
-        // 2. Настройка ImageView
         contentImageView.contentMode = .scaleAspectFit
         contentImageView.clipsToBounds = true
         
@@ -36,21 +32,10 @@ class FullImageController: UIViewController, FullImageControllerProtocol {
         contentImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            // ScrollView на весь экран
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            // ImageView внутри ScrollView
-            contentImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            
-            // Ключевое изменение: размер изображения не привязан к view
-            contentImageView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor),
-            contentImageView.heightAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor)
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }
@@ -59,11 +44,49 @@ extension FullImageController {
     func setImage(_ image: UIImage) {
         contentImageView.image = image
         view.layoutIfNeeded()
+
+        let imageSize = image.size
+        let scrollViewSize = scrollView.bounds.size
+        
+        let scaleW = scrollViewSize.width / imageSize.width
+        let scaleH = scrollViewSize.height / imageSize.height
+        
+        let newScale = min(scaleH, scaleW)
+        let minScale = min(scrollView.maximumZoomScale, max(scrollView.minimumZoomScale, newScale))
+        
+        let initialZoom = max(scrollView.minimumZoomScale,
+                             min(scrollView.maximumZoomScale, minScale))
+
+        contentImageView.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: imageSize.width,
+            height: imageSize.height
+        )
+        scrollView.contentSize = imageSize
+        scrollView.zoomScale = initialZoom
+        
+        alignmentCentreForImage()
+    }
+    
+    func alignmentCentreForImage() {
+        let scrollViewBounds = scrollView.bounds.size
+        let contentImageViewFrame = contentImageView.frame.size
+        
+        let heightForImage = max((scrollViewBounds.height - contentImageViewFrame.height) / 2, 0)
+        let weightForImage = max((scrollViewBounds.width - contentImageViewFrame.width) / 2, 0)
+        
+        scrollView.contentInset = UIEdgeInsets(top: heightForImage, left: weightForImage, bottom: heightForImage, right: weightForImage)
+        scrollView.layoutIfNeeded()
     }
 }
 
 extension FullImageController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentImageView
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        alignmentCentreForImage()
     }
 }
