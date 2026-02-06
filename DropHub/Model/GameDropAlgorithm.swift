@@ -55,10 +55,10 @@ final class GameDropAlgorithm: GameDropAlgorithmProtocol {
     }
     
     private func addGunPhotoInArray(with name: String) {
-        for i in 1...10{
+        for i in 1...10 {
             if let newGunPhoto = UIImage(named: name + String(i)){
                 gunPhotoArray.append(newGunPhoto)
-                if i == 10{
+                if i == 10 {
                     print(newGunPhoto)
                 }
             }
