@@ -6,8 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E781B4612F6D49B700697A36 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E781B4602F6D49B700697A36 /* SnapKit */; };
+		E793F9262F61B2DE006D7F6C /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = E793F9252F61B2DE006D7F6C /* Documentation.docc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7EF80772F61C38B00678B17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E735756A2EAA783C00CD88C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E73575712EAA783C00CD88C2;
+			remoteInfo = DropHub;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		E73575722EAA783C00CD88C2 /* DropHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E793F9252F61B2DE006D7F6C /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		E7EF80732F61C38B00678B17 /* DropHubTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropHubTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +46,23 @@
 			path = DropHub;
 			sourceTree = "<group>";
 		};
+		E7EF80742F61C38B00678B17 /* DropHubTest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DropHubTest;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E735756F2EAA783C00CD88C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E781B4612F6D49B700697A36 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7EF80702F61C38B00678B17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				E73575E42EAA847300CD88C2 /* DropHub */,
+				E7EF80742F61C38B00678B17 /* DropHubTest */,
 				E73575732EAA783C00CD88C2 /* Products */,
+				E793F9252F61B2DE006D7F6C /* Documentation.docc */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E73575722EAA783C00CD88C2 /* DropHub.app */,
+				E7EF80732F61C38B00678B17 /* DropHubTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,10 +111,34 @@
 			);
 			name = DropHub;
 			packageProductDependencies = (
+				E781B4602F6D49B700697A36 /* SnapKit */,
 			);
 			productName = DropHub;
 			productReference = E73575722EAA783C00CD88C2 /* DropHub.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E7EF80722F61C38B00678B17 /* DropHubTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7EF807B2F61C38B00678B17 /* Build configuration list for PBXNativeTarget "DropHubTest" */;
+			buildPhases = (
+				E7EF806F2F61C38B00678B17 /* Sources */,
+				E7EF80702F61C38B00678B17 /* Frameworks */,
+				E7EF80712F61C38B00678B17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7EF80782F61C38B00678B17 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E7EF80742F61C38B00678B17 /* DropHubTest */,
+			);
+			name = DropHubTest;
+			packageProductDependencies = (
+			);
+			productName = DropHubTest;
+			productReference = E7EF80732F61C38B00678B17 /* DropHubTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +153,10 @@
 					E73575712EAA783C00CD88C2 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
+					E7EF80722F61C38B00678B17 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = E73575712EAA783C00CD88C2;
+					};
 				};
 			};
 			buildConfigurationList = E735756D2EAA783C00CD88C2 /* Build configuration list for PBXProject "DropHub" */;
@@ -107,18 +168,29 @@
 			);
 			mainGroup = E73575692EAA783C00CD88C2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E781B45F2F6D49B700697A36 /* XCRemoteSwiftPackageReference "snapkit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E73575732EAA783C00CD88C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E73575712EAA783C00CD88C2 /* DropHub */,
+				E7EF80722F61C38B00678B17 /* DropHubTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E73575702EAA783C00CD88C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7EF80712F61C38B00678B17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,10 +204,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E793F9262F61B2DE006D7F6C /* Documentation.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7EF806F2F61C38B00678B17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7EF80782F61C38B00678B17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E73575712EAA783C00CD88C2 /* DropHub */;
+			targetProxy = E7EF80772F61C38B00678B17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E73575862EAA784000CD88C2 /* Debug */ = {
@@ -160,6 +248,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.practicum.DropHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_DOCUMENTATION_COMPILER = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -196,6 +285,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.practicum.DropHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_DOCUMENTATION_COMPILER = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -331,6 +421,50 @@
 			};
 			name = Release;
 		};
+		E7EF80792F61C38B00678B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY28Z653LG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.practicum.DropHubTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DropHub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DropHub";
+			};
+			name = Debug;
+		};
+		E7EF807A2F61C38B00678B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY28Z653LG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.practicum.DropHubTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DropHub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DropHub";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,7 +486,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E7EF807B2F61C38B00678B17 /* Build configuration list for PBXNativeTarget "DropHubTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7EF80792F61C38B00678B17 /* Debug */,
+				E7EF807A2F61C38B00678B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E781B45F2F6D49B700697A36 /* XCRemoteSwiftPackageReference "snapkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/snapkit/snapkit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E781B4602F6D49B700697A36 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E781B45F2F6D49B700697A36 /* XCRemoteSwiftPackageReference "snapkit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E735756A2EAA783C00CD88C2 /* Project object */;
 }
